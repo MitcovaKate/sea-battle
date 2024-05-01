@@ -74,8 +74,11 @@ index.php
  |                   V              
  +---$map=shoot($map,$coords)
  |     |
- |     +----------+
- |                V
- +---render_map($map)
-
+ |     +----------+-------+
+ |                V       |
+ +---render_map($map)     |
+ |               ---------+
+ |              |
+ |              V
+ +---save_map($map)----->map.json
  

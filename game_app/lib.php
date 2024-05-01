@@ -35,4 +35,14 @@ function get_coords($request){
 }
 return null;
 }
+
+
+
+function save_map($map){
+ file_put_contents("./data/map.json",json_encode($map));  
+}
+
+function load_map(){
+  return  json_decode(file_get_contents("./data/map.json"),true);  
+    }
 ?>
