@@ -21,8 +21,11 @@ return $html;
 
 
 
-function process_request($request){
-
+function shoot($map ,$coords){
+if($coords){
+     $map[$coords[0]][$coords[1]]=1; 
+}
+return $map;
 }
 
 function get_coords($request){
