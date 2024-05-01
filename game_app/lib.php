@@ -5,16 +5,31 @@ function render_map($map){
                  for ($ci = 0; $ci < 10; $ci++) { 
                     
                         $attributes = $map[$ri][$ci] == 1 ? 'class="ship sq"' : 'class="sq"';
-                        $attributes .= "href=\"/?shoot={$ri}x{$ci}\""
+                        $attributes .= "href=\"/?shoot={$ri}x{$ci}\"";
                   
-                 $html .= "<a$attributes></a>";
+                 $html .= "<a $attributes ></a>";
 
                  } 
             } 
-       $html .=' </div>';
+       $html .= '</div>';
 
 
 return $html;
 
+}
+
+
+
+
+function process_request($request){
+
+}
+
+function get_coords($request){
+     if (isset($request['shoot'])) {
+          $coords = explode('x', $request['shoot']);
+        return $coords;
+}
+return null;
 }
 ?>

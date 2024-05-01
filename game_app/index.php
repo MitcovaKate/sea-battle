@@ -1,8 +1,19 @@
-<? require_once 'input.php' ?>
-
-<link rel="stylesheet" href="/css/app.css">
-<?require_once 'lib.php';
-require_once 'map.php';
-print (render_map($map));
+<?header('Location: /')?>
+<?require_once 'lib.php'?>
+<?require_once 'map.php'?>
+<?
+$coords = get_coords($_GET);
 ?>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/app.css">
+    <title>SEA BATTLE</title>
+</head>
+<body>
+    <div class="container">
+        <?= render_map($map)?>
+    </div>
+</body>
+</html>
