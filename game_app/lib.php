@@ -1,10 +1,25 @@
 <?
-function render_map($map){
+
+const NO_SHOT = 0;
+const SHOT = 1;
+const NO_SHIP = 0;
+const SHIP = 1;
+
+function render_map($map_ship,$map_state){
     $html = '<div class="map">';
          for ($ri = 0; $ri < 10; $ri++) { 
                  for ($ci = 0; $ci < 10; $ci++) { 
-                    
-                        $attributes = $map[$ri][$ci] == 1 ? 'class="ship sq"' : 'class="sq"';
+                    if( $map_state[$ri][$ci] == NO_SHOT){
+                         $attributes = 'class="sq"';
+                    }
+
+                   else if( $map_state[$ri][$ci] == SHOT && $map_ship[$ri][$ci] == NO_SHIP ){
+                         $attributes = 'class="miss sq"';
+                    }
+                  else if( $map_state[$ri][$ci] == SHOT && $map_ship[$ri][$ci] == SHIP ){
+                         $attributes = 'class="hit sq"';
+                    }
+                        
                         $attributes .= "href=\"/?shoot={$ri}x{$ci}\"";
                   
                  $html .= "<a $attributes ></a>";
@@ -38,11 +53,11 @@ return null;
 
 
 
-function save_map($map){
- file_put_contents("./data/map.json",json_encode($map));  
+function save_map($map, $map_name){
+ file_put_contents("./data/{$map_name}}.json",json_encode($map));  
 }
 
-function load_map(){
-  return  json_decode(file_get_contents("./data/map.json"),true);  
+function load_map( $map_name){
+  return  json_decode(file_get_contents("./data/{$map_name}.json"),true);  
     }
 ?>
