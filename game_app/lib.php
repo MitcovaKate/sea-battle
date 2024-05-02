@@ -54,7 +54,7 @@ return null;
 
 
 function save_map($map, $map_name){
- file_put_contents("./data/{$map_name}}.json",json_encode($map));  
+ file_put_contents("./data/{$map_name}.json",json_encode($map));  
 }
 
 function load_map( $map_name){

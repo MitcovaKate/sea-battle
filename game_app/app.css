@@ -42,3 +42,14 @@ body {
     border: 1px solid #555;
     text-align: center;
   } */
+
+  .map .hit{
+    background-image: url(../icon/hit.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .map .miss{
+    background-image: url(../icon/miss.png);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
