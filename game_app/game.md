@@ -82,3 +82,13 @@ index.php
  |              V
  +---save_map($map)----->map.json
  
+
+
+
+---------GET req/match.php----->match.php---+
+                                            |
+                                            +
++--------res HTML---------------------------
+
+form1---POST req/login-action.php----------
+form2---POST req/login-action.php----------
