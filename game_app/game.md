@@ -94,8 +94,12 @@ form1---POST req/login-action.php---------->+
                                                \
                                                   +--->login-action.php
                                                            |
-                                               /           V
-form2---POST req/login-action.php---------->+    $username == 'player' && $password == '123'--+
+                                               /           |
+form2---POST req/login-action.php---------->+              +---$users=load_users()
+                                                           |
+                                                           +--for + if / search
+                                                           V
+                                                $username == 'player' && $password == '123'--+
                                                            |                                  |
                                                           true                              false                                    
                                                            |                                  |
