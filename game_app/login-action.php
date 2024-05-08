@@ -8,6 +8,6 @@ if($username == 'player' && $password == '123'){
 
 }
 else{
-    print("WRONG DATA");
+    header("Location: /match.php");
 }
 ?>

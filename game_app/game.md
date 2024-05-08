@@ -90,5 +90,20 @@ index.php
                                             +
 +--------res HTML---------------------------
 
-form1---POST req/login-action.php----------
-form2---POST req/login-action.php----------
+form1---POST req/login-action.php---------->+ 
+                                               \
+                                                  +--->login-action.php
+                                                           |
+                                               /           V
+form2---POST req/login-action.php---------->+    $username == 'player' && $password == '123'--+
+                                                           |                                  |
+                                                          true                              false                                    
+                                                           |                                  |
+                                                           V                                  V
+                                                                                      redirect->match.php
+                                                                                              |
+                                    < ---------------------  res ---------------------------- +
+                                      [HHH][]
+                                        ^
+                                        |
+                                        header("location:match.php")
