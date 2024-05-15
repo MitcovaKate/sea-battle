@@ -51,6 +51,14 @@ function get_coords($request){
 return null;
 }
 
+function get_message($request){
+     if (isset($request['message'])) {
+          $message = $request['message'];
+        return $message;
+}
+return null;
+}
+
 
 
 function save_map($map, $map_name){
@@ -64,6 +72,12 @@ function load_map( $map_name){
     function load_users(){
      return  json_decode(file_get_contents("./data/users.json"),true);  
        }
+
+
+       function save_users($users){
+file_put_contents("./data/users.json ",json_encode($users));
+       }
+
 
        function user_exists($users,$username,$password){
           $found = false;
@@ -86,3 +100,4 @@ function load_map( $map_name){
      return $found;
 }
 ?>
+
