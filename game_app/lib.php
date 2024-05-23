@@ -99,5 +99,5 @@ file_put_contents("./data/users.json ",json_encode($users));
       }
      return $found;
 }
-?>
+
 
